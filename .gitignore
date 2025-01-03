@@ -7,7 +7,7 @@
 *.dll
 *.so
 *.dylib
-conf2env
+/conf2env
 
 # Test binary, built with `go test -c`
 *.test

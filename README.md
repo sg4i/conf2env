@@ -11,7 +11,7 @@
 ## 安装
 
 ```bash
-go install github.com/sg4i/conf2env/cmd@latest
+go install github.com/sg4i/conf2env/cmd/conf2env@latest
 ```
 
 或者从源码构建：

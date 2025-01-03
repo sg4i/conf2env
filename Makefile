@@ -6,7 +6,7 @@ all: build
 
 build:
 	@echo "Building..."
-	@go build -o $(BINARY_NAME) ./cmd
+	@go build -o $(BINARY_NAME) ./cmd/conf2env
 
 clean:
 	@echo "Cleaning..."
@@ -18,7 +18,7 @@ test:
 
 install:
 	@echo "Installing..."
-	@go install ./cmd
+	@go install ./cmd/conf2env
 
 .PHONY: run
 run: build
