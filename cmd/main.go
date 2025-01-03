@@ -9,6 +9,8 @@ import (
 )
 
 var (
+	Version = "dev" // 由编译时注入
+
 	configFile string
 	outputFile string
 )
@@ -16,10 +18,14 @@ var (
 func init() {
 	flag.StringVar(&configFile, "conf", "config.yml", "配置文件路径")
 	flag.StringVar(&outputFile, "output", ".env", "输出的环境变量文件路径")
+	flag.Parse()
 }
 
 func main() {
-	flag.Parse()
+	if len(os.Args) > 1 && (os.Args[1] == "-v" || os.Args[1] == "--version") {
+		fmt.Printf("conf2env version %s\n", Version)
+		return
+	}
 
 	conv := converter.New(configFile, outputFile)
 	if err := conv.Convert(); err != nil {
